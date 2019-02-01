@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Hacking the bluetooth of my treadmill
-published: true
+published: false
 ---
 
 In order to keep exercising my runs during the dark and cold winter months, I decided to buy a treadmill to be able to train at all weather conditions. Of course running on a treadmill can be quite boring so I was looking into gathering the data from the treadmill and using it to create my own custom dashboards and to connect it to Strava, the Social Network for Athletes.
