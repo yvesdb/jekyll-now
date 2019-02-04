@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Using an ESP32 to readout treadmill data via bluetooth
 
