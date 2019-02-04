@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 ---
 ## Using an ESP32 to readout treadmill data via bluetooth
 
@@ -49,4 +49,3 @@ Output from the Arduino serial monitor:
 
 
 In a next blog, I will explain howto setup the IBM IoT Platform service and howto adapt the arduino code in order to send the treadmill responses in real time via MQTT.
-
