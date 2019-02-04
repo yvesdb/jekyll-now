@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 In my previous blog, I explained howto to get access to the the bluetooth service provided by the treadmill.
 
