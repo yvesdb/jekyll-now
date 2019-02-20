@@ -19,8 +19,8 @@ One additional setting we need to do is to set the Security Level to "TLS Option
 
 Basically, that's all we need to setup within the IoT platform.
 Next we need to adapt the Arduino code to make a connection the IBM IoT service using MQTT.
-You can find the code [here](Treadmill-Bluetooth-IoT/Treadmill_BLE_IBM_MQTT/Treadmill_BLE_IBM_MQTT.ino)
-Just update the MQTT parameters and the Wifi credentials and upload the code to the ESP32 module using the Arduino editor.
+You can find the code [here](Treadmill-Bluetooth-IoT/Treadmill_BLE_IBM_MQTT/Treadmill_BLE_IBM_MQTT.ino).
+Just update the MQTT parameters and the wifi credentials and upload the code to the ESP32 module using the Arduino editor.
 As soon as the ESP32 restarts, you should see the "ESP32" device active within the IBM Cloud IoT dashboard and once the treadmill gets started you should see the JSON payloads coming in.
 
 ![IBM_IoT_Device_Connected.png]({{site.baseurl}}/images/IBM_IoT_Device_Connected.png)
@@ -29,6 +29,14 @@ As soon as the ESP32 restarts, you should see the "ESP32" device active within t
 Now that we have the treadmill connected we can start using Node-Red in order to make a dashboard with some gauges and graphs representing the running distance as well as the belt speed and some calculated pace values.
 
 ![Treadmill_Dashboard.png]({{site.baseurl}}/images/Treadmill_Dashboard.png)
+
+The Node-Red flow contains a node "IBM IoT" which is the main entry point for processing the device data. Every message that the ESP32 pushess via MQTT will arrive here. The next component in the flow is "switch" node which checks if were in a "Running" or in a "Stopped" state.
+If the treadmill is in a running state we extract the values from the JSON payload and update the dashboard graphs and gauges.
+
+When we detect the "Stopped" state we just prepare the data and create a new "Strava" activity.
+
+Creating a Node-Red dashboard is quite easy so I won't explain this here.
+You can just import the full Node-Red from here and explore how it's built.
 
 
 
