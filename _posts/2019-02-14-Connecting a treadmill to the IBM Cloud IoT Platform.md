@@ -1,8 +1,6 @@
 ---
 published: true
 ---
-## Connecting a treadmill to the IBM Cloud IoT Platform
-
 Continuing from the previous blogs, I will explain how to connect a treadmill as a sensor within the IBM Cloud IoT Platform.
 
 First we need to create a "Internet of Things Platform Starter" kit within [https://cloud.ibm.com/catalog?search=Internet%20of%20things&category=starterkits](https://cloud.ibm.com/catalog?search=Internet%20of%20things&category=starterkits).
