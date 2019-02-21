@@ -32,14 +32,53 @@ Now that we have the treadmill connected we can start using Node-Red in order to
 
 ![Treadmill-Node-Red.png]({{site.baseurl}}/images/Treadmill-Node-Red.png)
 
-The Node-Red flow contains a node "IBM IoT" which is the main entry point for processing the device data. Every message that the ESP32 pushes via MQTT will arrive here. The next component in the flow is "switch" node which checks if were in a "Running" or in a "Stopped" state.
-If the treadmill is in a running state we extract the values from the JSON payload and update the dashboard graphs and gauges.
+The Node-Red flow contains a blue node "IBM IoT" which is connect to our IoT Platform Service and serves as the main entry point for processing the device data. Every message that the ESP32 pushes via MQTT will arrive here. The next component in the flow is "switch" node which checks if we are in a "Running" or in a "Stopped" state.
+If the treadmill is in a running state we extract the values from the JSON payload and update the dashboard graphs and gauges accordingly.
 Creating a Node-Red dashboard is quite easy so I won't explain this here.
 You can just import the full Node-Red from here and explore how it's built.
 
-Of course when we do a workout on the treadmill, as every athlete we want to have some traces of our activities. And we all know "If it's not on Strava, it didn't happen...".
+Of course when we do a workout on the treadmill, we want to have some traces of our activities. And we all know "If it's not on Strava, it didn't happen...".
 
 When we detect the "Stopped" state we just prepare the data and create a new "Strava" activity.
+Posting an activity to Strava is a bit more complicated as the Strava API requires Oauth2 for authentication. You can find more details [here](http://developers.strava.com/docs/reference/).
+
+First you will need to create your own API application in strava.
+Goto https://developers.strava.com and select "Create & Manage Your App".
+Once you have completed the required fields, your app should have a Client ID and Secret.
+
+In order to get an Access/Authorization token you need to perform the following steps:
+
+1. Create a request URL for Strava authorization, where the base URL is https://www.strava.com/oauth/authorize and parameters are:
+
+	- client_id : your application's ID, obtained during registration
+    - redirect_uri : URL to which the user will be redirected with the authorization code. A random but unique one on localhost should be fine.
+    - response_type	: must be 'code'
+    - scope	: 'read', 'read_all', 'profile:read_all', 'profile:write', 'profile:write', 'activity:read', 'activity:read_all', 'activity:write'
+
+[http://www.strava.com/oauth/authorize?client_id[REPLACE_WITH_YOUR_CLIENT_ID]&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=profile:write,activity:write](http://www.strava.com/oauth/authorize?client_id[REPLACE_WITH_YOUR_CLIENT_ID]&response_type=code&redirect_uri=http://localhost/exchange_token&approval_prompt=force&scope=profile:write,activity:write)
+
+2. Goto the above URL in a browser.
+3. Login to Strava and then click 'Authorize' and select the required permissions if needed.
+4. The browser should give you a 404 as http://localhost/exchange_token doesn't exist.
+5. Copy the authorization code from the URL. For example,
+http://localhost/exchange_token?state=&code=c498932e64136c8991a3fb31e3d1dfdf2f859357&scope=write
+
+The authorization code for next step is c498932e64136c8991a3fb31e3d1dfdf2f859357.
+
+6. In order to get the final access_token you need to perform a POST to https://www.strava.com/oauth/token as defined [here](https://developers.strava.com/docs/authentication/#token-exchange).
+
+You can use any HTTP Rest Client (e.g. Curl) or use the Node-Red flow from above:
+
+	$ curl -X POST https://www.strava.com/oauth/token \
+  	-F client_id=5 \
+  	-F client_secret=[REPLACE_WITH_YOUR_CLIENT_SECRET] \
+  	-F code=c498932e64136c8991a3fb31e3d1dfdf2f859357
+  	-F grant_type=authorization_code
+
+If you want to use the Node-Red flow, make sure to replace the credentials (client-id and secret) and code with your own.
+
+
+
 
 
 
