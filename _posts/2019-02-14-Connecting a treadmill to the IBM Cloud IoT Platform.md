@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Connecting a treadmill to the IBM Cloud IoT Platform
 
