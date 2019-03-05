@@ -17,7 +17,7 @@ One additional setting we need to do is to set the Security Level for device con
 
 Basically, that's all we need to setup within the IoT platform.
 Next we need to adapt the Arduino code to make a connection the IBM IoT service using MQTT.
-You can find the code [here](Treadmill-Bluetooth-IoT/Treadmill_BLE_IBM_MQTT/Treadmill_BLE_IBM_MQTT.ino).
+You can find the code [here](https://github.com/yvesdebeer/Treadmill-Bluetooth-IoT/blob/master/Treadmill_BLE_IBM_MQTT/Treadmill_BLE_IBM_MQTT.ino).
 Just update the MQTT parameters and the wifi credentials and upload the code to the ESP32 module using the Arduino editor.
 As soon as the ESP32 restarts, you should see the "ESP32" device active within the IBM Cloud IoT dashboard and once the treadmill gets started you should see the JSON payloads coming in.
 
@@ -77,16 +77,3 @@ You can use any HTTP Rest Client (e.g. Curl) or use the Node-Red flow from above
 If you want to use the Node-Red flow to get an access token, make sure to replace the credentials (client-id and secret) and code with your own.
 
 So there you have it. Now that the treadmill is fully connected we can focus on training indoors and sharing our activities on Strava.
-
-
-
-
-
-
-
-
-
-
-
-
-
