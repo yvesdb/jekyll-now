@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 If you are an experienced developer already familiar with Docker, here's a quick way to just deploy your containers into the cloud without having to worry about setting up and managing a Kubernetes cluster and important also ... it comes for free using Cloud Foundry !
 
