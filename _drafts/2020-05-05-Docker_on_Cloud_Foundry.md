@@ -5,9 +5,21 @@ published: false
 
 If you are an experienced developer already familiar with Docker, here's a quick way to just deploy your containers into the cloud without having to worry about setting up and managing a Kubernetes cluster and important also ... it comes for free using Cloud Foundry !
 
-Let's start by creating a simple NodeJS application locally using **'npm init'**, give your app a name e.g. **'tinyapp'** and use **'server.js'** as the entry point. 
+Let's start by creating a simple NodeJS application locally using 'npm init', give your app a name e.g. 'tinyapp' and use 'server.js' as the entry point. 
 
-This will generate a 'package.json' file for you.
+This will generate a 'package.json' file:
+
+    {
+	  "name": "tinyapp",
+	  "version": "1.0.0",
+	  "description": "",
+	  "main": "server.js",
+	  "scripts": {
+	    "test": "echo \"Error: no test specified\" && exit 1"
+	  },
+	  "author": "",
+	  "license": "ISC"
+    }
 
 ### Next install the NodeJS 'Express-framework' using the command: 
     
