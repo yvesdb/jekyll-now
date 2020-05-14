@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 ## Running Docker Containers on Cloud Foundry in IBM Cloud
 
@@ -133,4 +133,3 @@ And now we can push the image to run on the IBM Cloud using CLoud Foundry:
 	# cf push tinynodejs -o ydebeer/tinynodejs:latest
 
 And there you have it: a NodeJS app running as a Docker container in the IBM Cloud.
-
