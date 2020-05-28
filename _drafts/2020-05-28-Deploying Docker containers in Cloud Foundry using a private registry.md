@@ -1,10 +1,9 @@
 ---
 published: false
 ---
-In my [previous](https://yvesdebeer.github.io/Running-Docker-Containers-on-Cloud-Foundry-in-IBM-Cloud/) blog 
-I explained how to create a simple NodeJS application, Dockerize it and deploy it on IBM Cloud using the public DockerHub as a registry.
+In my [previous](https://yvesdebeer.github.io/Running-Docker-Containers-on-Cloud-Foundry-in-IBM-Cloud/) blog, I explained how to create a simple NodeJS application, Dockerize it and deploy it on IBM Cloud using the public DockerHub as a registry.
 
-This works fine if security is not an issue but there are some additional advantages of using a private registry such as the one in IBM Cloud. Not only does it protect your images, it also scans the images for security vulnarabilities.
+This works fine if security is not an issue but there are some additional advantages of using a private registry such as the one in IBM Cloud. Not only does it protect your images, it also scans the images for security vulnerabilities.
 
 The IBM registry is available for free to experiment within the IBM Cloud, even for a Lite Account but beware of limited storage.
 
@@ -13,7 +12,7 @@ If you don’t have an account yet you can [register](https://ibm.biz/freeaccoun
 You will also need to install the IBM Cloud Cli to interact with the Container Registry.
 More details on using the IBM Cloud CLI can be found here: <https://cloud.ibm.com/docs?tab=develop>
 
-To get started with the Container Regsitry select 'Kubernetes -> Registry' from the naviation bar or goto <https://cloud.ibm.com/kubernetes/registry/main/start>
+To get started with the Container Regsitry select 'Kubernetes -> Registry' from the naviation bar or goto : <https://cloud.ibm.com/kubernetes/registry/main/start>
 
 Just follow the instructions for a "Quick Start" to connect to a registry in your region and to do some first testing:
 
