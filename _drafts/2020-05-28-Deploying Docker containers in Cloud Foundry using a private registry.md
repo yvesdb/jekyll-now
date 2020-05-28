@@ -5,9 +5,9 @@ In my [previous](https://yvesdebeer.github.io/Running-Docker-Containers-on-Cloud
 
 This works fine if security is not an issue but there are some additional advantages of using a private registry such as the one in IBM Cloud. Not only does it protect your images, it also scans the images for security vulnerabilities.
 
-The IBM registry is available for free to experiment within the IBM Cloud, even for a Lite Account but beware of limited storage.
+The IBM registry is available for free to experiment within the IBM Cloud. Even for a Lite Account but beware of limited storage.
 
-If you don’t have an account yet you can [register](https://ibm.biz/freeaccount) for a free Lite account - no credit card needed ! <https://ibm.biz/freeaccount>
+If you don’t have an account yet, you can [register](https://ibm.biz/freeaccount) for a free Lite account - no credit card needed ! <https://ibm.biz/freeaccount>
 
 You will also need to install the IBM Cloud Cli to interact with the Container Registry.
 More details on using the IBM Cloud CLI can be found here: <https://cloud.ibm.com/docs?tab=develop>
@@ -31,7 +31,7 @@ Just follow the instructions for a "Quick Start" to connect to a registry in you
 	9c27e219663c: Pushed 
 	1.0: digest: sha256:90659bf80b44ce6be8234e6ff90a1ac34acbeb826903b02cfa0da11c82cbc042 size: 525
 
-Let's take our simple NodeJS application and name it 'server.js':
+Let's take our simple NodeJS application and name it 'server.js' :
 
 	const express = require('express');
 	const app = express();
@@ -67,8 +67,8 @@ Next, tag the image with a reference to our Container registry and push it to th
 	Repository                Tag   Digest         Namespace   Created         Size     Security status   
 	de.icr.io/ydbns/tinyapp   1.0   ba2f1c028c72   ydbns       4 minutes ago   365 MB   3 Issues   
 	
-We can already see that the vulneraility scanner has scanned the image and reports 3 issues.
-You can review the issues by requesting a vulnerability assemsment for the image:
+We can already see that the vulnerability scanner has scanned the image and reports 3 issues.
+You can review the issues by requesting a vulnerability assessment for the image:
 
 	# ic cr va de.icr.io/ydbns/tinyapp:1.0
 	Checking security issues for 'de.icr.io/ydbns/tinyapp:1.0'...
@@ -117,7 +117,7 @@ Before we can do that we need to create an API key to give Cloud Foundry deploym
 		"modified_at": "2020-05-28T14:14+0000"
 	}
 	
-Next we'll set 'CF_DOCKER_PASSWORD' to our 'apikey' and then we are ready to deploy using 'iamapikey'
+Next we'll set 'CF_DOCKER_PASSWORD' to our 'apikey' and then we are ready to deploy using 'iamapikey'.
 
 	# export CF_DOCKER_PASSWORD=Au1--YZ7a3pt2EblHAb28P_55ZDGsLuDug..........
 	# ic cf push ydbtinyapp -o de.icr.io/ydbns/tinyapp:1.0 --docker-username iamapikey
