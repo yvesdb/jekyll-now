@@ -1,5 +1,5 @@
 ---
-published: false
+published: true
 ---
 In my [previous](https://yvesdebeer.github.io/Running-Docker-Containers-on-Cloud-Foundry-in-IBM-Cloud/) blog, I explained how to create a simple NodeJS application, Dockerize it and deploy it on IBM Cloud using the public DockerHub as a registry.
 
