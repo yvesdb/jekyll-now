@@ -7,7 +7,7 @@ This article describes how to create your own GPS tracker using Pycom LoPy micro
 
 Guided details and explanations are also available from IBM Developer Europe Crowdcast channel: <https://www.crowdcast.io/e/build-a-gps-tracker>
 
-[Architecture diagram](http://....)
+[Architecture diagram](https://github.com/yvesdebeer/yvesdebeer.github.io/blob/master/images/LoRa_Architecture.png)
 
 **Hardware needed:**
 
@@ -107,5 +107,3 @@ More details on usage of MQTT with 'TheThingsNetwork' can be found here: <https:
 
 If you want to see all this in action, see also my recorded session at IBM Developer Europe Crowdcast channel: <https://www.crowdcast.io/e/build-a-gps-tracker>
 There I also show how to connect a Lora GPS tracker with my public Lora communication provider Proximus in Belgium.
-
-
