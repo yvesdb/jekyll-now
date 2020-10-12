@@ -7,7 +7,7 @@ This article describes how to create your own GPS tracker using Pycom LoPy micro
 
 Guided details and explanations are also available from IBM Developer Europe Crowdcast channel: <https://www.crowdcast.io/e/build-a-gps-tracker>
 
-[Architecture diagram](https://github.com/yvesdebeer/yvesdebeer.github.io/blob/master/images/LoRa_Architecture.png)
+![Architecture diagram]({{site.baseurl}}/images/LoRa_Architecture.png)
 
 **Hardware needed:**
 
