@@ -6,7 +6,7 @@ published: false
 This post describes how to create your own GPS tracker using Pycom LoPy microcontrollers. 
 You will also learn how to build your own single-channel LoRa Nano Gateway.
 
-Do you prefer guided details and explanations ? There is a `video recording` available from my technical talk at the [IBM Developer Europe Crowdcast channel](<https://www.crowdcast.io/e/build-a-gps-tracker>)
+Do you prefer guided details and explanations ? There is a **video recording** available from my technical talk at the [IBM Developer Europe Crowdcast channel](<https://www.crowdcast.io/e/build-a-gps-tracker>)
 
 The architecure diagram below shows the different components we will cover in our setup.
 A LoPy Node, used as a GPS tracking device, sending data to a LoRa Nano-Gateway.
