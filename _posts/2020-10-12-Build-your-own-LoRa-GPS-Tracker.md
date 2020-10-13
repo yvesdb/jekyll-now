@@ -1,5 +1,5 @@
 ---
-published: true
+published: false
 ---
 ## Create your own GPS-tracker using LoRa
 
