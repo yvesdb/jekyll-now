@@ -28,7 +28,7 @@ In order to program the 'LoPy' microcontrollers we will use 'Pymakr' - a plugin 
 
 The 'LoPy' from Pycom.io is a multi-network hardware module based on the ESP32 microcontroller. Most of the modules (functions and libraries) are built into MicroPython.
 
-###1. Setup a LoRaWAN Nano Gateway and connect to 'TheThingsNetwork'
+### 1. Setup a LoRaWAN Nano Gateway and connect to 'TheThingsNetwork'
 
 The source code for the LoRaWAN Nano-Gateway can be found here: <https://github.com/pycom/pycom-libraries/archive/master.zip>
 
@@ -40,7 +40,7 @@ All details for setting up the Nano-Gateway can be found at:
 This will guide you to defining a gateway on **The Things Network**, set the configuration parameters according to your region, uploading the code to the board and verifying it's operational within **The Things Network** console.
 You can get an account for free at **The Things Network**. It serves as a registration point for our gateway as well as an integration point for our data packets we will send from our LoRa GPS Tracker node.
 
-###2. Setup a Lora Node with GPS tracker
+### 2. Setup a Lora Node with GPS tracker
 
 Getting started with 'The Things Network':
 
