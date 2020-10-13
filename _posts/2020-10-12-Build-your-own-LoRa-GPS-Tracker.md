@@ -122,7 +122,7 @@ In order to get the data via MQTT from 'TheThingsNetwork' you will need to creat
 
 More details on usage of MQTT with 'TheThingsNetwork' can be found here: <https://www.thethingsnetwork.org/docs/applications/mqtt/api.html>
 
-**Conclusion**
+### Conclusion
 
 This article should get you started with the basics of IoT using Lora communication.
 
