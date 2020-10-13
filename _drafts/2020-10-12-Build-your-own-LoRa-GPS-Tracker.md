@@ -34,13 +34,13 @@ The 'LoPy' from Pycom.io is a multi-network hardware module based on the ESP32 m
 
 The source code for the LoRaWAN Nano-Gateway can be found here: <https://github.com/pycom/pycom-libraries/archive/master.zip>
 
-Unzip the download file and then find the `lorawan-nano-gateway` folder under examples.
+Unzip the download file and then find the **lorawan-nano-gateway** folder under examples.
 
 All details for setting up the Nano-Gateway can be found at: 
 <https://pycom.io/lopy-lorawan-nano-gateway-using-micropython-and-ttn/>
 
-This will guide you to defining a gateway on `The Things Network`, set the configuration parameters according to your region, uploading the code to the board and verifying it's operational within `The Things Network` console.
-You can get an account for free at `The Things Network`. It serves as a registration point for our gateway as well as an integration point for our data packets we will send from our LoRa GPS Tracker node.
+This will guide you to defining a gateway on **The Things Network**, set the configuration parameters according to your region, uploading the code to the board and verifying it's operational within **The Things Network** console.
+You can get an account for free at **The Things Network**. It serves as a registration point for our gateway as well as an integration point for our data packets we will send from our LoRa GPS Tracker node.
 
 ###2. Setup a Lora Node with GPS tracker
 
