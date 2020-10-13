@@ -46,10 +46,10 @@ You can get an account for free at **The Things Network**. It serves as a regist
 
 Getting started with 'The Things Network':
 
-https://core-electronics.com.au/tutorials/pycom/getting-started-on-the-things-network-tutorial.html
+<https://core-electronics.com.au/tutorials/pycom/getting-started-on-the-things-network-tutorial.html>
 
 Follow the instructions on 'The Things Network' to register and activate your 'LoPy' device. 
-https://www.thethingsnetwork.org/docs/devices/lopy/usage.html
+<https://www.thethingsnetwork.org/docs/devices/lopy/usage.html>
 
 There are two ways to activate via either OTAA (Over the Air Activation) or ABP (Activation By Personalization). OTAA is the preferred method, certainly if you have a lot of devices, but doesn't seem to be working with the LoRa Nano-Gateway.
 
@@ -95,8 +95,10 @@ Now we have configured a LoRa node we should see the packets coming in via the c
 
 Next we can add the code for reading the fixed GPS location data.
 Sample code can be found here: <https://github.com/yvesdebeer/Lora_GPSTracker/blob/master/TTN-abp_node_GPS/main.py>
-In the sample we make use of the 'adafruit_gps' library and we only send a LoRa packet once we have a fixed GPS location.
-This is all great but the data we receive are all bytes ! So how do we get this into a usable format ? We have to decode it.
+
+In the example we make use of the 'adafruit_gps' library and we only send a LoRa packet once we have a fixed GPS location.
+This is all great but the data we receive are all bytes ! So how do we get this into a usable format ? We have to decode it !
+
 Goto 'TheThingsNetwork'-console and select your application. Next select the tab 'Payload Formats' and define a decoder. Don't forget to save it.
 
 ```
@@ -124,9 +126,9 @@ More details on usage of MQTT with 'TheThingsNetwork' can be found here: <https:
 
 **Conclusion**
 
+This article should get you started with the basics of IoT using Lora communication.
+
 If you want to see all this in action, there is a video recording available from my technical talk at the [IBM Developer Europe Crowdcast channel](<https://www.crowdcast.io/e/build-a-gps-tracker>)
 There I also show how to connect the Lora GPS tracker with a public Lora communication provider 'Proximus' in Belgium.
-
-This article should get you started with the basics of IoT using Lora communication.
 
 Are you thinking of other use cases for IoT using Lora ?
