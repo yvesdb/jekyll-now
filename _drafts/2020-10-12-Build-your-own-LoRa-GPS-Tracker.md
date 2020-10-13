@@ -4,9 +4,14 @@ published: false
 ## Creating your own GPS-tracker using LoRa
 
 This post describes how to create your own GPS tracker using Pycom LoPy microcontrollers. 
-You will also learn how to create your own single-channel LoRa Nano Gateway.
+You will also learn how to build your own single-channel LoRa Nano Gateway.
 
 Do you prefer guided details and explanations ? There is a video recording available from my technical talk at the IBM Developer Europe Crowdcast channel: <https://www.crowdcast.io/e/build-a-gps-tracker>
+
+The architecure diagram below show the different components we will cover in our setup.
+A LoPy Node used a GPS tracking device connected to a LoRa Nano-Gateway through LoRa.
+The gateway itself is connected with 'TheThingsNetwork' via WiFi.
+Finally we'll have Node-Red running in IBM Cloud which will pick up the MQTT messages from 'TheThingsNetwork', store those into a Cloudant database and visualize the GPS data point onto a map.
 
 ![Architecture diagram]({{site.baseurl}}/images/LoRa_Architecture.png)
 
