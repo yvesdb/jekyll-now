@@ -1,12 +1,12 @@
 ---
 published: false
 ---
-## Quick recipe for creating a LoRa GPS-tracker 
+## Creating your own GPS-tracker using LoRa
 
-This article describes how I created my own GPS tracker using Pycom LoPy microcontrollers. 
-I also learn how to create your own single-channel LoRa Nano Gateway.
+This post describes how to create your own GPS tracker using Pycom LoPy microcontrollers. 
+You will also learn how to create your own single-channel LoRa Nano Gateway.
 
-Guided details and explanations are also available from my session recorded at the IBM Developer Europe Crowdcast channel: <https://www.crowdcast.io/e/build-a-gps-tracker>
+Do you prefer guided details and explanations ? There is a video recording available from my technical talk at the IBM Developer Europe Crowdcast channel: <https://www.crowdcast.io/e/build-a-gps-tracker>
 
 ![Architecture diagram]({{site.baseurl}}/images/LoRa_Architecture.png)
 
@@ -105,6 +105,8 @@ The GPS data is gathered from 'TheThingsNetwork' via MQTT and stored into Clouda
 In order to get the data via MQTT from 'TheThingsNetwork' you will need to create/generate a new access key. Goto 'TheThingsNetwork'-console - select your application. You can find the access keys within the settings of you application. The generated key can be found at the bottom of the application overview page.
 
 More details on usage of MQTT with 'TheThingsNetwork' can be found here: <https://www.thethingsnetwork.org/docs/applications/mqtt/api.html>
+
+**Conclusion**
 
 If you want to see all this in action, see also my recorded session at the IBM Developer Europe Crowdcast channel: <https://www.crowdcast.io/e/build-a-gps-tracker>
 There I also show how to connect a Lora GPS tracker with my public Lora communication provider 'Proximus' in Belgium.
