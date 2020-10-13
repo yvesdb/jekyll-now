@@ -1,8 +1,6 @@
 ---
 published: false
 ---
-## Create your own GPS-tracker using LoRa
-
 This post describes how to create your own GPS tracker using Pycom LoPy microcontrollers. 
 You will also learn how to build your own single-channel LoRa Nano Gateway.
 
