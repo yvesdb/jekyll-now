@@ -1,11 +1,13 @@
 ---
 published: false
 ---
-## A quick way to deploy code to Kubernetes
+## A quick way to deploy code to Kubernetes using GitHub Actions
 
+As a developer, we're always looking for simplification when it comes to deploying code.
+We like to concentrate on writing code without worrying about infrastructure components.
 In this article, I will explain how to deploy a sample VueJS application to a IBM Cloud Kubernetes Service cluster.
 
-Normally, as a developer, you would perform the following steps:
+Normally you would perform the following steps:
 - Install IBM Cloud CLI
 - Authenticate with IBM Cloud CLI
 - Build the Docker image
@@ -14,7 +16,7 @@ Normally, as a developer, you would perform the following steps:
 
 Now you no longer have to perform these steps manually, because there's GitHub actions which does this all for you.
 
-All you need is a Dockerfile to create the Docker image.
+All you need is a Dockerfile to create the Docker image. You probably already have it when you're testing on your local machine.
 
 For my sample VueJS application, I use the two-step build : [https://github.com/yvesdebeer/vuejs-app/blob/master/Dockerfile](https://github.com/yvesdebeer/vuejs-app/blob/master/Dockerfile)
 
@@ -29,7 +31,7 @@ Let’s take a look at how to use this new workflow. When you click the “Actio
 When you select Deploy to IBM Cloud Kubernetes Service, a workflow is generated for you.
 
 Before committing the file, be sure to configure the **IMAGE_NAME**, **IKS_CLUSTER** and **DEPLOYMENT_NAME** fields. 
-Additionally, you’ll need to create two GitHub Secrets, one for your IBM Cloud API key and one for your IBM Cloud Container Registry namespace.
+Additionally, you’ll need to create two GitHub Secrets, one for your **IBM Cloud API key** and one for your **IBM Cloud Container Registry namespace**.
 In my case, I have a Container Registry service deployed in Frankfurt so I also changed the **IBM_CLOUD_REGION** to "eu-de" and the **REGISTRY_HOSTNAME** to "de.icr.io".
 The port is set to 8080 as this is the port that is exposed by the Docker container.
 
