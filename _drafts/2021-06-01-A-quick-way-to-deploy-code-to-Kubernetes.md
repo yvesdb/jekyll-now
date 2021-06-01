@@ -5,29 +5,26 @@ published: false
 
 In this article, I will explain how to deploy a sample VueJS application to a IBM Cloud Kubernetes Service cluster.
 
-Normally, as a developer, I would perform the following steps:
+Normally, as a developer, you would perform the following steps:
 - Install IBM Cloud CLI
 - Authenticate with IBM Cloud CLI
 - Build the Docker image
 - Push the image to IBM Cloud Container Registry
 - Deploy the Docker image to a IBM Cloud Kubernetes Service cluster
 
-Now you no longer have to perform these steps manually, because there's a github actions which does
-this all for you.
+Now you no longer have to perform these steps manually, because there's GitHub actions which does this all for you.
 
 All you need is a Dockerfile to create the Docker image.
 
-For my VueJS application, I used the two-step build : [https://github.com/yvesdebeer/vuejs-app/blob/master/Dockerfile](https://github.com/yvesdebeer/vuejs-app/blob/master/Dockerfile)
+For my sample VueJS application, I use the two-step build : [https://github.com/yvesdebeer/vuejs-app/blob/master/Dockerfile](https://github.com/yvesdebeer/vuejs-app/blob/master/Dockerfile)
 
 This Dockerfile will first run a "npm run build" in a seperate build-image.
-The results of this build are then copied to an NGINX runtime which will host the runtime/compiled components my VueJS application.
+The results of this build are then copied to an NGINX runtime which will host the runtime/compiled components the VueJS application.
 
 All we need to do is check-in our code into a GitHub repo (e.g. [https://github.com/yvesdebeer/vuejs-app](https://github.com/yvesdebeer/vuejs-app/blob/master/Dockerfile))
 
 With just a few clicks, you can leverage GitHub Actions to generate a workflow, which can be customized to your cluster and application needs.
 Let’s take a look at how to use this new workflow. When you click the “Actions” tab of any GitHub repository, you’ll immediately see IBM Cloud Kubernetes Service as an option for you to deploy on.
-
-![Video Instructions](https://youtu.be/r5hyAmuNHyE)
 
 When you select Deploy to IBM Cloud Kubernetes Service, a workflow is generated for you.
 
@@ -42,13 +39,13 @@ The port is set to 8080 as this is the port that is exposed by the Docker contai
 	  IBM_CLOUD_API_KEY: ${{ secrets.IBM_CLOUD_API_KEY }}
 	  IBM_CLOUD_REGION: eu-de
 	  ICR_NAMESPACE: ${{ secrets.ICR_NAMESPACE }}
-	  REGISTRY_HOSTNAME: us.icr.io
-	  IMAGE_NAME: iks-test
+	  REGISTRY_HOSTNAME: de.icr.io
+	  IMAGE_NAME: vuejs-app
 	  IKS_CLUSTER: example-iks-cluster-name-or-id
-	  DEPLOYMENT_NAME: iks-test
+	  DEPLOYMENT_NAME: vuejs-app
 	  PORT: 8080
 	  
-Since I'm using a Free (Single Node) IKS cluster, I need to access the deployed application via the IP address of the node of the cluster. So I changed the 'kubectl create service" command to use  'nodeport' instead of 'loadbalancer' and also added the final statement 'kubectl get nodes -o wide' so you see the IP address of the node within the logs in order to access the application.
+Since I'm using a Free (Single Node) IKS cluster, I need to access the deployed application via the IP address of the node of my cluster. So I changed the 'kubectl create service' command to use  'nodeport' instead of 'loadbalancer' and also added the final statement 'kubectl get nodes -o wide' so you see the IP address of the node within the workflow log in order to access the application.
 
 	# Deploy the Docker image to the IKS cluster
     - name: Deploy to IKS
@@ -68,3 +65,12 @@ The deployment workflow will only start once we create a new release of our code
 You can monitor the deployment steps within the "actions" tab of the Github repo.
 If the run completes successfully you should be able to access the application.
 
+Alternatively, if you want to kick-off the deployment when new code is pushed to the repo, just change the GitHub Actions yaml file to :
+
+	name: Build and Deploy to IKSje
+
+	on: [push]
+
+Additional info and instructions:
+- [Video Instructions](https://youtu.be/r5hyAmuNHyE)
+- https://www.stevemar.net/github-actions-with-iks/
