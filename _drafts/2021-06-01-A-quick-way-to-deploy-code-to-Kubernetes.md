@@ -30,9 +30,11 @@ Let’s take a look at how to use this new workflow. When you click the “Actio
 
 When you select Deploy to IBM Cloud Kubernetes Service, a workflow is generated for you.
 
-Before committing the file, be sure to configure the **IMAGE_NAME**, **IKS_CLUSTER** and **DEPLOYMENT_NAME** fields. 
+Before committing the file, be sure to configure the **IMAGE_NAME**, **IKS_CLUSTER** and **DEPLOYMENT_NAME** fields.
+
 Additionally, you’ll need to create two GitHub Secrets, one for your **IBM Cloud API key** and one for your **IBM Cloud Container Registry namespace**.
-In my case, I have a Container Registry service deployed in Frankfurt so I also changed the **IBM_CLOUD_REGION** to "eu-de" and the **REGISTRY_HOSTNAME** to "de.icr.io".
+
+In my cloud environment, I use a Container Registry service which is deployed in Frankfurt so I also changed the **IBM_CLOUD_REGION** to **"eu-de"** and the **REGISTRY_HOSTNAME** to **"de.icr.io"**.
 The port is set to 8080 as this is the port that is exposed by the Docker container.
 
 	# Environment variables available to all jobs and steps in this workflow
@@ -47,7 +49,7 @@ The port is set to 8080 as this is the port that is exposed by the Docker contai
 	  DEPLOYMENT_NAME: vuejs-app
 	  PORT: 8080
 	  
-Since I'm using a Free (Single Node) IKS cluster, I need to access the deployed application via the IP address of the node of my cluster. So I changed the 'kubectl create service' command to use  'nodeport' instead of 'loadbalancer' and also added the final statement 'kubectl get nodes -o wide' so you see the IP address of the node within the workflow log in order to access the application.
+Since I'm using a Free (Single Node) IKS cluster, I need to access the deployed application via the IP address of the node of my cluster. So I changed the 'kubectl create service' command to use  'nodeport' instead of 'loadbalancer' and also added the final statement 'kubectl get nodes -o wide' to see the IP address of the node within the workflow log in order to access the application.
 
 	# Deploy the Docker image to the IKS cluster
     - name: Deploy to IKS
@@ -69,7 +71,7 @@ If the run completes successfully you should be able to access the application.
 
 Alternatively, if you want to kick-off the deployment when new code is pushed to the repo, just change the GitHub Actions yaml file to :
 
-	name: Build and Deploy to IKSje
+	name: Build and Deploy to IKS
 
 	on: [push]
 
