@@ -1,13 +1,11 @@
 ---
 published: true
 ---
-## A quick way to deploy code to Kubernetes using GitHub Actions
-
-![github-action-to-Kubernetes]({{site.baseurl}}/images/github-action-to-Kubernetes.jpg)
-
 As a developer, we're always looking for simplification when it comes to deploying code.
 We like to concentrate on writing code without worrying about infrastructure components.
 In this article, I will explain how to deploy a sample VueJS application to a IBM Cloud Kubernetes Service cluster.
+
+![github-action-to-Kubernetes]({{site.baseurl}}/images/github-action-to-Kubernetes.jpg)
 
 Normally you would perform the following steps:
 - Install IBM Cloud CLI
