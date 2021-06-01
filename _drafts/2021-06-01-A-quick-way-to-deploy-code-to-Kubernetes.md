@@ -77,4 +77,4 @@ Alternatively, if you want to kick-off the deployment when new code is pushed to
 
 Additional info and instructions:
 - [Video Instructions](https://youtu.be/r5hyAmuNHyE)
-- https://www.stevemar.net/github-actions-with-iks/
+- [https://www.stevemar.net/github-actions-with-iks/](https://www.stevemar.net/github-actions-with-iks)
