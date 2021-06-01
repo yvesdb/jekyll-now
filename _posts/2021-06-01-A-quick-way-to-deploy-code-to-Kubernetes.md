@@ -1,9 +1,9 @@
 ---
-published: false
+published: true
 ---
 ## A quick way to deploy code to Kubernetes using GitHub Actions
 
-![github-action-to-Kubernetes]({{site.baseurl}}/_drafts/github-action-to-Kubernetes.jpg)
+![github-action-to-Kubernetes]({{site.baseurl}}/images/github-action-to-Kubernetes.jpg)
 
 As a developer, we're always looking for simplification when it comes to deploying code.
 We like to concentrate on writing code without worrying about infrastructure components.
