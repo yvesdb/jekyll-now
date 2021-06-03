@@ -23,7 +23,7 @@ For my sample VueJS application, I use the two-step build : [https://github.com/
 This Dockerfile will first run a "npm run build" in a seperate build-image.
 The results of this build are then copied to an NGINX runtime which will host the runtime/compiled components the VueJS application.
 
-All we need to do is check-in our code into a GitHub repo (e.g. [https://github.com/yvesdebeer/vuejs-app](https://github.com/yvesdebeer/vuejs-app/blob/master/Dockerfile))
+All we need to do is check-in our code into a GitHub repo (e.g. [https://github.com/yvesdebeer/vuejs-app](https://github.com/yvesdebeer/vuejs-app)
 
 With just a few clicks, you can leverage GitHub Actions to generate a workflow, which can be customized to your cluster and application needs.
 Let’s take a look at how to use this new workflow. When you click the “Actions” tab of any GitHub repository, you’ll immediately see IBM Cloud Kubernetes Service as an option for you to deploy on.
